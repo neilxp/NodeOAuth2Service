@@ -1,0 +1,20 @@
+!!! 5
+html
+  head
+    title= config.title
+    link(rel='stylesheet', href='/css/style.css')
+    meta(http-equiv='Content-Type, content='text/html; charset=utf-8')
+
+  div.page
+    div.header.box
+      h1= config.title
+    - if (flash.warn)
+      p.warn= flash.warn
+    - if (session.user)
+      p.right Hello, #{session.user.user} 
+        a(href='/sessions/destroy') Logout
+  
+    body!= body
+
+    div.foot.
+      Copyright&copy; #{config.site_name}

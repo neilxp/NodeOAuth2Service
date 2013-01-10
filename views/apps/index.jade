@@ -1,0 +1,13 @@
+div.main.box
+  .app
+    ul.applist
+      - each app in apps 
+        li.lineDot
+          .pic
+            img(src='/images/icon.png', title="#{app.name}", alt="#{app.name}")
+          .para
+            p.fb
+              a(href="/apps/" + app._id.toHexString()) #{app.name}
+            p.right
+              a(href="/apps/" + app._id.toHexString() + "/edit") 编辑属性
+  
